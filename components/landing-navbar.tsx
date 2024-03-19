@@ -7,14 +7,25 @@ import { useAuth } from "@clerk/nextjs";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
+
+import { Menu, X } from "lucide-react";
+import logo from "../logo.png";
+import { navItems } from "../constants";
 
 const font = Montserrat({ weight: '600', subsets: ['latin'] });
 
 export const LandingNavbar = () => {
   const { isSignedIn } = useAuth();
+  const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
+
+  const toggleNavbar = () => {
+    setMobileDrawerOpen(!mobileDrawerOpen);
+  };
 
   return (
-    <nav className="p-4 bg-transparent flex items-center justify-between">
+    
+         <nav className="p-4 bg-transparent flex items-center justify-between">
       <Link href="/" className="flex items-center">
         <div className="relative h-8 w-8 mr-4">
           <Image fill alt="Logo" src="/logo.png" />
@@ -25,11 +36,16 @@ export const LandingNavbar = () => {
       </Link>
       <div className="flex items-center gap-x-2">
         <Link href={isSignedIn ? "/dashboard" : "/sign-up"}>
-          <Button variant="outline" className="rounded-full">
+          <Button variant="outline" className="rounded-full text-black">
             Get Started
           </Button>
         </Link>
       </div>
     </nav>
+    
+   
+    
+
+    
   )
 }

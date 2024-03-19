@@ -78,7 +78,7 @@ const CodePage = () => {
         <div>
             <Heading
               title="Email Auto-Correction"
-              description="Correct your email like a pro."
+              description="Refine your email with professional AI expertise."
               icon={Mail}
               iconColor="text-orange-500"
               bgColor="bg-violet-500/10"

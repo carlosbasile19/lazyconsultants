@@ -49,7 +49,7 @@ export async function POST(
             
             if(!isPro)
                 await increaseApiLimit();
-        console.log(response.choices[0].message)
+   
         return NextResponse.json(response.choices[0].message)
 
     }catch (e) {

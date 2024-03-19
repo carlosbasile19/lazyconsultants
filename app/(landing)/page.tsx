@@ -1,15 +1,24 @@
-import { LandingContent } from "@/components/landing-content";
+import FeatureSection from "@/components/feature-section";
+import { Testimonials } from "@/components/testimonials";
 import { LandingHero } from "@/components/landing-hero";
 import { LandingNavbar } from "@/components/landing-navbar";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Workflow from "@/components/landing-workflow";
+import Pricing from "@/components/landing-pricing";
+import Footer from "@/components/landing-footer";
+import Navbar from "@/components/landing-navbar-alternative";
 
 const LandingPage = () => {
     return (
     <div className="h-full">
-        <LandingNavbar />
+        <Navbar />
         <LandingHero />
-        <LandingContent />
+        <FeatureSection />
+        <Workflow />
+        <Pricing />
+        <Testimonials  />
+        <Footer />
     </div>
     )
 };
