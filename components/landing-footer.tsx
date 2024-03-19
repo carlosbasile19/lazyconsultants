@@ -2,6 +2,9 @@
 
 import Link from "next/link";
 import { resourcesLinks, platformLinks, communityLinks } from "../constants";
+import PrivacyPolicy from "./PrivacyPolicy";
+import CookiePolicy from "./CookiePolicy";
+import IubendaConsentSolution from "./IubendaConsentSolution";
 
 
 const Footer = () => {
@@ -53,7 +56,10 @@ const Footer = () => {
             ))}
           </ul>
         </div>
-      </div>
+        <PrivacyPolicy />
+        <CookiePolicy />
+        <IubendaConsentSolution />
+       </div>
     </footer>
   );
 };
