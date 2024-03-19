@@ -1,4 +1,5 @@
 "use client"
+
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { navItems } from "../constants";
@@ -6,6 +7,7 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 import { useAuth } from "@clerk/nextjs";
 import Image from "next/image";
+
 
 const Navbar = () => {
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
@@ -25,7 +27,6 @@ const Navbar = () => {
               alt="Logo"
               width={40}
               height={40}
-
               />
            
           </div>
@@ -34,14 +35,15 @@ const Navbar = () => {
               <li key={index}>
                 <Link 
                   href={item.href}
-                > {item.label}  </Link>
+                 > {item.label} 
+                </Link>
               </li>
             ))}
           </ul>
           <div className="hidden lg:flex justify-center space-x-12 items-center">
             <Link href={isSignedIn ? "/dashboard" : "/sign-up"}>
-                <Button  className="bg-gradient-to-r from-purple-400 to-pink-600 py-2 px-3 rounded-md"
-                >
+                <Button  variant="outline"  className="bg-gradient-to-r from-purple-400 to-pink-600 py-2 px-3 rounded-md on-hover:bg-pink-700 transition duration-200"
+            >
                     Get Started
                 </Button>
             </Link>
@@ -58,14 +60,16 @@ const Navbar = () => {
               {navItems.map((item, index) => (
                 <li key={index} className="py-4">
                    <Link 
-                  href={item.href}
-                > {item.label}  </Link>
+                      onClick={toggleNavbar}
+                      href={item.href}
+                   > {item.label}  
+                 </Link>
                 </li>
               ))}
             </ul>
             <div className="flex space-x-6">
-            <Link href={isSignedIn ? "/dashboard" : "/sign-up"}>
-                <Button  className="bg-gradient-to-r from-purple-400 to-pink-600 py-2 px-3 rounded-md"
+            <Link  href={isSignedIn ? "/dashboard" : "/sign-up"}>
+                <Button variant="outline" className="bg-gradient-to-r from-purple-400 to-pink-600 py-2 px-3 rounded-md on-hover:bg-pink-700 transition duration-200"
                 >
                     Get Started
                 </Button>

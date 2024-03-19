@@ -2,8 +2,12 @@
 
 import { CheckCircle2 } from "lucide-react";
 import { pricingOptions } from "../constants";
+import Link from "next/link";
+import { Button } from "./ui/button";
+import { useAuth } from "@clerk/nextjs";
 
 const Pricing = () => {
+  const { isSignedIn } = useAuth();
   return (
     <div id='pricing' className="mt-20">
       <h2 className="text-3xl sm:text-5xl lg:text-6xl text-center my-8 tracking-wide">
@@ -35,12 +39,13 @@ const Pricing = () => {
                   </li>
                 ))}
               </ul>
-              <a
-                href="#"
-                className="inline-flex justify-center items-center text-center w-full h-12 p-5 mt-20 tracking-tight text-xl hover:bg-pink-700 border border-pink-700 rounded-lg transition duration-200"
-              >
-                Subscribe
-              </a>
+              
+              <Link href={isSignedIn ? "/dashboard" : "/sign-up"}>
+                <Button  className="inline-flex justify-center items-center text-center w-full h-12 p-5 mt-20 tracking-tight text-xl hover:bg-pink-700 border border-pink-500 rounded-lg transition duration-200"
+            >
+                    Get Started
+                </Button>
+            </Link>
             </div>
           </div>
         ))}
