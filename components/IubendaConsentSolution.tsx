@@ -27,7 +27,7 @@ const IubendaConsentSolution = () => {
         "customizeButtonDisplay": true,
         "explicitWithdrawal": true,
         "listPurposes": true,
-        "position": "float-top-center",
+        "position": "float-bottom-center",
         "rejectButtonDisplay": true,
         "showTitle": false
       }
