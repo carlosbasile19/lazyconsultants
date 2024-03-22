@@ -10,17 +10,24 @@ import { Button } from "./ui/button";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { useState } from "react";
-import { tools } from "@/constants";
+import { SPECIAL_OFFER_OPTION_STATUS, tools } from "@/constants";
 
 export const ProModal = () => {
 
     const proModal = useProModal();
     const [loading, setLoading] = useState(false);
 
-    const onSubscribe = async () => {
+    const onSubscribe = async (isSpecialOffer: boolean ) => {
         try {
+
           setLoading(true);
-          const response = await axios.get("/api/stripe");
+            let response;
+         
+          if (isSpecialOffer && SPECIAL_OFFER_OPTION_STATUS === "ACTIVE") {
+             response = await axios.get("/api/stripe?offerCode=PARTNER_OFFER");
+          } else {
+             response = await axios.get("/api/stripe");
+          }
     
           window.location.href = response.data.url;
         } catch (error) {
@@ -67,17 +74,37 @@ export const ProModal = () => {
                             ))}
                     </DialogDescription>
                 </DialogHeader>
-                <DialogFooter>
-                        <Button
-                         disabled = {loading}
-                         onClick={onSubscribe}
-                         size="lg"
-                         variant="premium"
-                         className="w-full"
-                        >
-                            Upgrade
-                            <Zap className="w-4 h-4 ml-2 fill-white" />
-                        </Button>
+                <DialogFooter >
+                    
+                    <Button
+                        disabled={loading}
+                        onClick={() => onSubscribe(false)}
+                        size="lg"
+                        variant="premium"
+                        className="w-full"
+                    >
+                        Upgrade
+                        <Zap className="w-4 h-4 ml-2 fill-white" />
+                    </Button>
+                    {
+                        // Special Offer
+                        SPECIAL_OFFER_OPTION_STATUS === "ACTIVE" && (
+                            <Button
+                                 disabled = {loading}
+                                 onClick={() => onSubscribe(true)}
+                                 size="lg"
+                                 variant="golden"
+                                 className="w-full"
+                                 
+                                >
+                                    Special Offer
+                                    <Zap className="w-4 h-4 ml-2 fill-white" />
+                            </Button>
+                        )
+                    }
+                    
+                  
+             
                 </DialogFooter>
             </DialogContent>
         </Dialog>

@@ -1,7 +1,7 @@
 "use client"
 
 import { CheckCircle2 } from "lucide-react";
-import { pricingOptions } from "../constants";
+import { pricingOptions, SPECIAL_OFFER_OPTION_STATUS } from "../constants";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { useAuth } from "@clerk/nextjs";
@@ -19,7 +19,7 @@ const Pricing = () => {
             <div className="p-10 border border-neutral-700 rounded-xl">
               <p className="text-4xl mb-8">
                 {option.title}
-                {option.title === "Pro" && (
+                {option.title.includes("Partner") && (
                   <span className="bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text text-xl mb-4 ml-2">
                     (Most Popular)
                   </span>
@@ -27,7 +27,10 @@ const Pricing = () => {
               </p>
               <p className="mb-8">
                 <span className="text-5xl mt-6 mr-2">{option.price}</span>
-                <span className="text-neutral-400 tracking-tight">/Month</span>
+                {
+                   option.title.includes("Partner") && SPECIAL_OFFER_OPTION_STATUS === "ACTIVE" ? <span className="text-neutral-400 tracking-tight">Once</span> : <span className="text-neutral-400 tracking-tight">/Month</span>
+                }
+              
               </p>
               <ul>
                 {option.features.map((feature, index) => (

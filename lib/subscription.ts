@@ -34,3 +34,33 @@ export const checkSubscription = async () => {
 
   return !!isValid;
 };
+
+export const checkLifetimeSubscription = async () => {
+  const { userId } = auth();
+
+  if (!userId) {
+    return false;
+  }
+
+  const userSubscription = await prismadb.userSubscription.findUnique({
+    where: {
+      userId: userId,
+    },
+    select: {
+      stripeSubscriptionId: true,
+      stripeCurrentPeriodEnd: true,
+      stripeCustomerId: true,
+      stripePriceId: true,
+    },
+  })
+
+  if (!userSubscription) {
+    return false;
+  }
+
+  const isValid =
+    userSubscription.stripePriceId &&
+    userSubscription.stripeCurrentPeriodEnd?.getTime()! > new Date("2080-01-01").getTime()
+
+  return !!isValid;
+}

@@ -21,6 +21,7 @@ interface features {
 
 
 export const MAX_FREE_COUNTS = 10;
+export const SPECIAL_OFFER_OPTION_STATUS = "ACTIVE";
 
 export const PROMPT_INSTRUCTIONS_MAIL = `
 You are an email correction AI.
@@ -122,7 +123,6 @@ export const testimonials = [
   },
 ];
 
-
 export const features = [
   {
     icon: MessageSquare,
@@ -163,8 +163,6 @@ export const features = [
  
 ];
 
-
-
 export const checklistItems = [
   {
     title: "Effortless Email Management",
@@ -188,7 +186,6 @@ export const checklistItems = [
   },
 ];
 
-
 export const pricingOptions = [
   {
     title: "Free",
@@ -197,8 +194,19 @@ export const pricingOptions = [
       "10 Free Generations",
       "Limited Features",
       "Basic Support",
+      
     ],
   },
+  {
+      title: "Special Offer: Partner",
+      price: "$150",
+      features: [
+        "Lifetime Subscription",
+        "Feature Development Voting and Prioritization",
+        "Direct Support with the Team",
+        "Only for the first 50 users"
+      ],
+    },
   {
     title: "Pro",
     price: "$10",
