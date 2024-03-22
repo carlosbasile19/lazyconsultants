@@ -93,26 +93,30 @@ export async function POST(req: Request) {
     if (!session?.metadata?.userId) {
       return new NextResponse("User id is required", { status: 400 });
     }
+     
+      try {
 
+        const subscription = await stripe.subscriptions.retrieve(
+          session.subscription as string
+        )
+  
+        await prismadb.userSubscription.update({
+          where: {
+            stripeSubscriptionId: subscription.id,
+          },
+          data: {
+            stripePriceId: subscription.items.data[0].price.id,
+            stripeCurrentPeriodEnd: new Date(
+              subscription.current_period_end * 1000
+            ),
+          },
+        })
+        
+      } catch (error) {
+        console.log("This is not a subscription")
+      }
 
-    const invoice = await stripe.invoices.retrieve(session.invoice as string)
-    console.log(invoice)
-
-    const subscription = await stripe.subscriptions.retrieve(
-      session.subscription as string
-    )
-
-    await prismadb.userSubscription.update({
-      where: {
-        stripeSubscriptionId: subscription.id,
-      },
-      data: {
-        stripePriceId: subscription.items.data[0].price.id,
-        stripeCurrentPeriodEnd: new Date(
-          subscription.current_period_end * 1000
-        ),
-      },
-    })
+      
 
   }
 
