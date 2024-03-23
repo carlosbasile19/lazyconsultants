@@ -38,12 +38,12 @@ export async function POST(req: Request) {
           const payment_intent = await stripe.paymentIntents.retrieve(
             session.payment_intent as string
           )
-          console.log(payment_intent)
+          
 
           // Special Offers
 
           if (payment_intent && payment_intent.amount_received === 15000) {
-            console.log("Special Offer")
+         
             await prismadb.userSubscription.create({
               data: {
                 userId: session?.metadata?.userId,
