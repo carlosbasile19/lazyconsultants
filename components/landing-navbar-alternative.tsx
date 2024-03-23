@@ -11,6 +11,7 @@ import Image from "next/image";
 
 const Navbar = () => {
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
+  
   const { isSignedIn } = useAuth();
 
   const toggleNavbar = () => {

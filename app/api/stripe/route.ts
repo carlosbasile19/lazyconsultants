@@ -16,7 +16,7 @@ export async function GET( req: Request) {
      const url = new URL(req.url)
      const searchParams = new URLSearchParams(url.searchParams)
      const offerCode = searchParams.get("offerCode")
-     console.log("[OFFER_CODE]", offerCode)
+    
      
         if (!user || !userId) {
              return new NextResponse("Unauthorized", {status: 401})
