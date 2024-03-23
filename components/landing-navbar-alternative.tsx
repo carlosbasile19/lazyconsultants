@@ -23,10 +23,11 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center flex-shrink-0">
             <Image
-              src="/logo.png"
+              src="/logo_real.png"
               alt="Logo"
-              width={40}
-              height={40}
+              width={50}
+              height={50}
+              
               />
            
           </div>

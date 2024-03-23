@@ -43,7 +43,7 @@ export async function POST(
                 return new NextResponse("You have reached the free limit", {status: 403})
 
             const response = await openai.chat.completions.create({
-                    model: "gpt-3.5-turbo",
+                    model: "gpt-4-0125-preview",
                     messages: [instructionMessage, ...messages],
             });
             

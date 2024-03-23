@@ -87,7 +87,7 @@ export async function GET( req: Request) {
                     name: "Lazy Consultants Pro",
                     description: "Unlimited AI Generations"
                   },
-                  unit_amount: 1000,
+                  unit_amount: 1500,
                   recurring: {
                     interval: "month"
                   }
