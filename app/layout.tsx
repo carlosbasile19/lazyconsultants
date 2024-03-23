@@ -5,6 +5,7 @@ import './globals.css'
 import { ModalProvider } from '@/components/modal-provider'
 import { ToasterProvider } from '@/components/toaster-provider'
 import { CrispProvider } from '@/components/crips-provider'
+const cors = require('cors')({ origin: true });
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,6 +20,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
+    
     <ClerkProvider>
       <html lang="en">
          <CrispProvider/>

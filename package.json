@@ -22,6 +22,7 @@
     "axios": "^1.6.7",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
+    "cors": "^2.8.5",
     "crisp-sdk-web": "^1.0.22",
     "lucide-react": "^0.306.0",
     "micromark-util-decode-numeric-character-reference": "^2.0.1",
