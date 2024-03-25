@@ -94,7 +94,7 @@ export const ProModal = () => {
                                  onClick={() => onSubscribe(true)}
                                  size="lg"
                                  variant="golden"
-                                 className="w-full mb-2"
+                                 className="w-full"
                                  
                                 >
                                     Special Offer
