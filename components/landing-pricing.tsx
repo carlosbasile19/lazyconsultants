@@ -28,7 +28,7 @@ const Pricing = () => {
               <p className="mb-8">
                 <span className="text-5xl mt-6 mr-2">{option.price}</span>
                 {
-                   option.title.includes("Partner") && SPECIAL_OFFER_OPTION_STATUS === "ACTIVE" ? <span className="text-neutral-400 tracking-tight">Once</span> : <span className="text-neutral-400 tracking-tight">/Month</span>
+                   option.title.includes("Partner") && SPECIAL_OFFER_OPTION_STATUS === "ACTIVE" ? <span className="text-neutral-400 tracking-tight">/ One time payment</span> : <span className="text-neutral-400 tracking-tight">/ Yearly Subscription</span>
                 }
               
               </p>

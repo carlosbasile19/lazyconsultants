@@ -42,7 +42,7 @@ export async function POST(req: Request) {
 
           // Special Offers
 
-          if (payment_intent && payment_intent.amount_received === 15000) {
+          if (payment_intent && payment_intent.amount_received === 7000) {
          
             await prismadb.userSubscription.create({
               data: {

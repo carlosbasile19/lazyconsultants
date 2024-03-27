@@ -60,7 +60,7 @@ export async function GET( req: Request) {
                     name: "Lazy Consultants Partner Offer",
                     description: "Lifetime Access"
                   },
-                  unit_amount: 15000,
+                  unit_amount: 7000,
                   
                 },
                 quantity: 1,
@@ -87,9 +87,9 @@ export async function GET( req: Request) {
                     name: "Lazy Consultants Pro",
                     description: "Unlimited AI Generations"
                   },
-                  unit_amount: 1500,
+                  unit_amount: 4500,
                   recurring: {
-                    interval: "month"
+                    interval: "year"
                   }
                 },
                 quantity: 1,

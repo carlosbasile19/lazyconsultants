@@ -197,7 +197,7 @@ export const pricingOptions = [
   },
   {
       title: "Special Offer: Partner",
-      price: "$150",
+      price: "$70",
       features: [
         "Lifetime Subscription",
         "Feature Development Voting and Prioritization",
@@ -207,7 +207,7 @@ export const pricingOptions = [
     },
   {
     title: "Pro",
-    price: "$15",
+    price: "$45",
     features: [
       "Unlimited Generations",
       "Early Access to New Features",
