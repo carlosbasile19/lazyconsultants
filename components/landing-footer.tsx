@@ -2,70 +2,84 @@
 
 import Link from "next/link";
 import { resourcesLinks, platformLinks, communityLinks } from "../constants";
-import PrivacyPolicy from "./PrivacyPolicy";
-import CookiePolicy from "./CookiePolicy";
-import IubendaConsentSolution from "./IubendaConsentSolution";
 import { useAuth } from "@clerk/nextjs";
+import Image from "next/image";
+import config from "@/config";
+
 
 
 const Footer = () => {
-  const { isSignedIn } = useAuth();
-  return (
-    <footer className="mt-20 border-t py-10 border-neutral-700">
-      <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
-        <div>
-          <h3 className="text-md font-semibold mb-4">Resources</h3>
-          <ul className="space-y-2">
-            {resourcesLinks.map((link, index) => (
-              <li key={index}>
-                <Link
-                  href={link.href}
-                  className="text-neutral-300 hover:text-white"
-                >
-                  {link.text}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h3 className="text-md font-semibold mb-4">Platform</h3>
-          <ul className="space-y-2">
-            {platformLinks.map((link, index) => (
-              <li key={index}>
-                <a
-                  href={link.href}
-                  className="text-neutral-300 hover:text-white"
-                >
-                  {link.text}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h3 className="text-md font-semibold mb-4">Community</h3>
-          <ul className="space-y-2">
-            {communityLinks.map((link, index) => (
-              <li key={index}>
-                <a
-                  href={link.href}
-                  className="text-neutral-300 hover:text-white"
-                >
-                  {link.text}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <PrivacyPolicy />
-        <CookiePolicy />
 
-        { !isSignedIn && (
-          <IubendaConsentSolution />
-        )}
-        
-       </div>
+  return (
+    <footer className="bg-base-200 border-t border-base-content/10 mt-5">
+      <div className="max-w-7xl mx-auto px-8 py-24">
+        <div className=" flex lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+          <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+            <Link
+              href="/#"
+              aria-current="page"
+              className="flex gap-2 justify-center md:justify-start items-center"
+            >
+              <Image
+                src={"/logo_real.png"}
+                alt={`${config.appName} logo`}
+                priority={true}
+                className="w-6 h-6"
+                width={24}
+                height={24}
+              />
+              <strong className="font-extrabold tracking-tight text-base md:text-lg">
+                {config.appName}
+              </strong>
+            </Link>
+
+            <p className="mt-3 text-sm text-base-content/80">
+              {config.appDescription}
+            </p>
+            <p className="mt-3 text-sm text-base-content/60">
+              Copyright © {new Date().getFullYear()} - All rights reserved
+            </p>
+          </div>
+          <div className="flex-grow flex flex-wrap justify-center -mb-10 md:mt-0 mt-10 text-center">
+            <div className="lg:w-1/3 md:w-1/2 w-full px-4">
+              <div className="footer-title font-semibold text-base-content tracking-widest text-sm md:text-left mb-3">
+                LINKS
+              </div>
+
+              <div className="flex flex-col justify-center items-center md:items-start gap-2 mb-10 text-sm">
+            
+                  <a
+                    href={`mailto:support@lazyconsultants.com`}
+                    target="_blank"
+                    className="link link-hover"
+                    aria-label="Contact Support"
+                  >
+                    Support
+                  </a>
+                
+                <Link href="/#pricing" className="link link-hover">
+                  Pricing
+                </Link>
+              </div>
+            </div>
+
+            <div className="lg:w-1/3 md:w-1/2 w-full px-4">
+              <div className="footer-title font-semibold text-base-content tracking-widest text-sm md:text-left mb-3">
+                LEGAL
+              </div>
+
+              <div className="flex flex-col justify-center items-center md:items-start gap-2 mb-10 text-sm">
+                <Link href="/tos" className="link link-hover">
+                  Terms of services
+                </Link>
+                <Link href="/privacy-policy" className="link link-hover">
+                  Privacy policy
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
   );
 };

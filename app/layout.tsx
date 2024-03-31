@@ -5,14 +5,14 @@ import './globals.css'
 import { ModalProvider } from '@/components/modal-provider'
 import { ToasterProvider } from '@/components/toaster-provider'
 import { CrispProvider } from '@/components/crips-provider'
+import { getSEOTags } from '@/lib/seo'
 const cors = require('cors')({ origin: true });
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata: Metadata = {
-  title: 'Lazy Consultants',
-  description: 'Automation AI SaaS for Consultants',
-}
+// This adds default SEO tags to all pages in our app.
+// You can override them in each page passing params to getSOTags() function.
+export const metadata = getSEOTags();
 
 export default function RootLayout({
   children,
