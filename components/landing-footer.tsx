@@ -1,12 +1,8 @@
 "use client"
 
 import Link from "next/link";
-import { resourcesLinks, platformLinks, communityLinks } from "../constants";
-import { useAuth } from "@clerk/nextjs";
 import Image from "next/image";
 import config from "@/config";
-
-
 
 const Footer = () => {
 
