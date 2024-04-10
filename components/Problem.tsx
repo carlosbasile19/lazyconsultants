@@ -46,13 +46,13 @@ const Problem = () => {
     <h2 className="max-w-3xl mx-auto font-extrabold text-4xl md:text-5xl tracking-tight mb-6 md:mb-8">
       80% of consultants struggle with work since they{' '}
       <span className="bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text">
-        don't
+        don&apos;t
       </span>{' '}
       have time for working.
     </h2>
 
     <p className="max-w-xl mx-auto text-lg opacity-90 leading-relaxed mb-12 md:mb-20">
-      Alignment meetings, follow ups, SAL, UAT and more. It's a lot to carry on...
+      Alignment meetings, follow ups, SAL, UAT and more. It&apos;s a lot to carry on...
     </p>
 
     <div className="flex flex-col md:flex-row justify-center items-center md:items-start gap-6">
