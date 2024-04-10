@@ -8,6 +8,9 @@ import Pricing from "@/components/landing-pricing";
 import Footer from "@/components/landing-footer";
 import Navbar from "@/components/landing-navbar-alternative";
 import { auth } from "@clerk/nextjs";
+import FeaturesAccordion from '@/components/FeaturesAccordion';
+import Problem from '@/components/Problem';
+import FAQ from '@/components/FAQ';
 
 const LandingPage = () => { 
 
@@ -21,10 +24,10 @@ const LandingPage = () => {
             <div className="h-full">
                 <Navbar />
                 <LandingHero />
-                <FeatureSection />
-                <Workflow />
+                <Problem />
+                <FeaturesAccordion />
                 <Pricing />
-                <Testimonials />
+                <FAQ />
                 <Footer />
             </div>
         );

@@ -34,7 +34,7 @@ export const LandingHero = () => {
 
       </div>
       <div className="text-sm md:text-xl font-light text-zinc-400">
-       Boost productivity by 10x with AI technology.
+       Boost productivity by 10x and stay lazy with Lazy Consultants.
       </div>
       <div>
         <Link href={isSignedIn ? "/dashboard" : "/sign-up"}>

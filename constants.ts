@@ -77,9 +77,8 @@ export const tools = [
 
 export const navItems = [
   { label: "Features", href: "#features" },
-  { label: "Workflow", href: "#workflow" },
   { label: "Pricing", href: "#pricing" },
-  { label: "Testimonials", href: "#testimonials" },
+  { label: "FAQ", href: "#faq" },
 ];
 
 export const testimonials = [
@@ -196,12 +195,12 @@ export const pricingOptions = [
     ],
   },
   {
-      title: "Special Offer: Partner",
+      title: "Partner",
       price: "$70",
       features: [
         "Lifetime Subscription",
-        "Feature Development Voting and Prioritization",
-        "Direct Support with the Team",
+        "Feature Development Voting",
+       
         "Only for the first 50 users"
       ],
     },
