@@ -25,7 +25,7 @@ const features = [
   {
     title: "Email Auto-Correction",
     description:
-      "Send transactional emails, setup your DNS to avoid spam folder (DKIM, DMARC, SPF in subdomain), and listen to webhook to receive & forward emails",
+      "Write and correct the grammar, spelling, and punctuation of your emails in a single click.",
     type: "video",
     path: "https://d3lmwvpp5ra7ib.cloudfront.net/Demo Mail Correction.mp4",
     format: "video/webm",
