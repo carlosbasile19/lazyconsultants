@@ -27,7 +27,7 @@ const features = [
     description:
       "Write and correct the grammar, spelling, and punctuation of your emails in a single click.",
     type: "video",
-    path: "https://d3lmwvpp5ra7ib.cloudfront.net/Demo Mail Correction.mp4",
+    path: "https://d3lmwvpp5ra7ib.cloudfront.net/Demo Mail Correction.webm",
     format: "video/webm",
     svg: (
       <svg
@@ -50,7 +50,7 @@ const features = [
     description:
       "Translate your emails preserving the technical terms, and the context of the email.",
       type: "video",
-      path: "https://d3lmwvpp5ra7ib.cloudfront.net/email-translation.mp4",
+      path: "https://d3lmwvpp5ra7ib.cloudfront.net/email-translation.webm",
       format: "video/webm",
       svg: (
         <svg
